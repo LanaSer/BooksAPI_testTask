@@ -2,7 +2,6 @@ import book.Book;
 import client.BookGenerator;
 import client.BookStep;
 import client.Methods;
-import client.BookGenerator;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,7 @@ public class GetBookTest {
     private final Methods methods = new Methods();
     private String id;
 
-    private Book book = BookGenerator.generic();
+    private Book book = BookGenerator.random();
 
     @Test
     @DisplayName("Получение списка всех книг")
@@ -47,9 +46,9 @@ public class GetBookTest {
         methods.no0statusCode404(response);
     }
     @Test
-    @DisplayName("Получение книги по id 3")
+    @DisplayName("Получение книги по id 4")
     public void getBookNo3() {
-        ValidatableResponse response = bookStep.getBook("3");
+        ValidatableResponse response = bookStep.getBook("4");
         methods.no3statusCode404(response);
     }
 
@@ -70,9 +69,9 @@ public class GetBookTest {
     @Test
     @DisplayName("Получение созданной книги по id")
     public void getCreateBook() {
-        ValidatableResponse response = bookStep.createBook(String.valueOf(book));
+        ValidatableResponse response = bookStep.createBook("Полет");
         //id = response.extract().path("id").toString();
-        //bookStep.getBook(id);
+       // bookStep.getBook(id);
     }
 
 }

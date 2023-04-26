@@ -14,6 +14,10 @@ public class Books {
         this.isElectronicBook = isElectronicBook;
     }
 
+    public Books(){
+
+    }
+
     public String getName() {
         return name;
     }

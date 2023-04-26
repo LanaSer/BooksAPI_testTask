@@ -10,17 +10,19 @@ public class CreateBookTest {
     private final BookStep bookStep = new BookStep();
     private final Methods methods = new Methods();
     private String id;
+    private  Book book;
+    private Books books;
 
     @Test
     @DisplayName("Создание книги со всеми полями")
-    public void createBookAllPole(){
-        bookStep.createBooks("");
+    public void createBookAllFields(){
+   //bookStep.createBooks("Год Единорога","Андрэ Нортон", 1965 ,false);
 
     }
     @Test
     @DisplayName("Создание книги только с необходимым полем name")
     public void createNameBook(){
-        bookStep.createBook("");
+        bookStep.createBook("Год дракона");
 
     }
     @Test

@@ -15,14 +15,13 @@ public class BookStep extends Client {
     private static final String DELETE_BOOK_ENDPOINT = "/api/books/";
 
     @Step("Создание книги со всеми полями")
-    public ValidatableResponse createBooks(String books) {
+    public ValidatableResponse createBooks(Books books) {
         return given().log().all().spec(getSpec()).body(books).when().post(CREATE_BOOK_ENDPOINT).then().log().all();
     }
     @Step("Создание книги только с полем name")
-    public ValidatableResponse createBook(String book) {
-        return given().log().all().spec(getSpec()).body(book).when().post(CREATE_BOOK_ENDPOINT).then().log().all();
+    public ValidatableResponse createBook(String name) {
+        return given().spec(getSpec()).body(name).when().post(CREATE_BOOK_ENDPOINT).then().log().all();
     }
-
 
     @Step("Получить список книг")
     public ValidatableResponse getBooks() {
@@ -47,5 +46,4 @@ public class BookStep extends Client {
     public ValidatableResponse updateBook(String id) {
         return given().spec(getSpec()).when().delete(UPDATE_BOOK_ENDPOINT + id).then().log().all();
     }
-
 }

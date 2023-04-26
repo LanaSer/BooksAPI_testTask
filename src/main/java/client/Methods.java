@@ -19,9 +19,9 @@ public class Methods {
     public void no0statusCode404(ValidatableResponse response) {
         response.assertThat().statusCode(404).and().assertThat().body("error", equalTo("Book with id 0 not found"));
     }
-    @Step("Проверка кода ответа запросе книги по 3 id")
+    @Step("Проверка кода ответа запросе книги по 4 id")
     public void no3statusCode404(ValidatableResponse response) {
-        response.assertThat().statusCode(404).and().assertThat().body("error", equalTo("Book with id 3 not found"));
+        response.assertThat().statusCode(404).and().assertThat().body("error", equalTo("Book with id 4 not found"));
     }
     @Step("Проверка кода ответа не верном запросе книги по id")
     public void statusCode404(ValidatableResponse response) {

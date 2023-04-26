@@ -5,6 +5,10 @@ public class Book {
     public Book(String name){
         this.name = name;
     }
+
+    public Book(){
+
+    }
     public String getName() {
         return name;
     }
