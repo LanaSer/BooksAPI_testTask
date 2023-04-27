@@ -14,9 +14,10 @@ public class Books {
         this.isElectronicBook = isElectronicBook;
     }
 
-    public Books(){
+    public Books() {
 
     }
+
 
     public String getName() {
         return name;
@@ -42,7 +43,7 @@ public class Books {
         this.year = year;
     }
 
-    public boolean isElectronicBook() {
+    public boolean isElectronicBook(Boolean electronic) {
         return isElectronicBook;
     }
 

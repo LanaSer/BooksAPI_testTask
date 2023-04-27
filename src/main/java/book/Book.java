@@ -2,13 +2,15 @@ package book;
 
 public class Book {
     private String name;
-    public Book(String name){
+
+    public Book(String name) {
         this.name = name;
     }
 
-    public Book(){
+    public Book() {
 
     }
+
     public String getName() {
         return name;
     }
